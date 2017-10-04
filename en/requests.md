@@ -126,6 +126,7 @@ Important - Currently the server will not allow responses with over 50 primary d
 
 ## Time
 
+* Data retention period: 4 months.
 * The max search time span between createdAt-start and createdAt-end is 28 days
 * If you don't specify either createdAt-start, or createdAt-end, the default is: current time - 28 days
 * If you specify only createdAt-start, createdAt-end is 28 days after or current time, whichever hits first
