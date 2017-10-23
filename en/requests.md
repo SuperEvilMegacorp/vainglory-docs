@@ -124,13 +124,15 @@ If not specified, the server will default for matches to`limit=5` and `offset=0`
 Important - Currently the server will not allow responses with over 50 primary data objects
 </aside>
 
-## Time
-
-* The max search time span between createdAt-start and createdAt-end is 28 days
-* If you don't specify either createdAt-start, or createdAt-end, the default is: current time - 28 days
-* If you specify only createdAt-start, createdAt-end is 28 days after or current time, whichever hits first
-* If you specify only createdAt-end, createdAt-start is 28 days prior
-* If you specify a future time, and are within the 28 day limit, the createdAt-end will default to current time
+## Search Time
+* Data retention period: 120 days.
+* The max search time span between createdAt-start and createdAt-end: 28 days.
+#### Defaults: 
+* If you don't specify createdAt-start, the default is now - 28 days.
+* If you don't specify createdAt-end, the default is now.
+* If you search for a time > now, the default is now.
+* If you search for a time before the retention period, the default is the retention period (now - 120 days).
+* If createdAt-start >= createdAt-end, you will recieve an error.
 
 {% method %}
 ## Sorting
