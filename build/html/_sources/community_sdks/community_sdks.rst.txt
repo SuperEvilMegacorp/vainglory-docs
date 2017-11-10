@@ -3,7 +3,7 @@
 Community SDKs
 ===============
 
-Community contributions are welcome and rewarded with good karma (and swag!) If you are currently working on an API, let us know on the Discord server and we will add a link!
+Community contributions are welcome and rewarded with good karma (and swag!) If you are currently working on an API, email us at vainglory-gamelocker@madglory.com with a link and we will add it below!
 
 Java
 ---------------------------
@@ -15,6 +15,7 @@ Python
 ---------------------------
 
 Python 3 wrapper for the Gamelocker API - `schneefux/python-gamelocker <http://github.com/schneefux/python-gamelocker/>`_.
+
 Python 3 wrapper for the Gamelocker API - `ClarkThyLord/madglory-ezl <https://github.com/ClarkThyLord/madglory-ezl/>`_.
 
 
@@ -39,7 +40,7 @@ A proof of concept go client for the Vainglory Developer API - `madglory/vainglo
 Ruby
 ---------------------------
 
-A Ruby gem wrapper for the Vainglory Developer API - `Ruby Gem <https://rubygems.org/gems/vainglory-api/>`_. || `Github <https://github.com/cbortz/vainglory-api-ruby/>`_.
+A Ruby gem wrapper for the Vainglory Developer API - `Ruby Gem <https://rubygems.org/gems/vainglory-api/>`_ || `Github <https://github.com/cbortz/vainglory-api-ruby/>`_.
 
 
 .. toctree::

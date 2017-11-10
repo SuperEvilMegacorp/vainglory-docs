@@ -21,6 +21,7 @@ shardID            str             Match Shard
 stats              map             See Match.stats
 assets             obj             See Match.assets
 rosters            obj             See Rosters
+titldId            str             Game Title
 =================  ==============  ===========================
 
 
@@ -110,7 +111,7 @@ Variable    	   Type            Description
 id                 str             UID of player
 name               str             IGN of player
 stats              map             See Participants.player.stats
-type              str             palyer
+type               str             player
 =================  ==============  ===========================
 
 **Particpants.stats**

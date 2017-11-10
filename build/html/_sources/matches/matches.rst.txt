@@ -3,7 +3,7 @@
 Matches
 =======
 
-Matches records are created every time players complete a game session. Each Match contains high level information about the game session, including info like duration, gameMode, and more. Each Match has two Rosters.
+Match records are created every time players complete a game session. Each Match contains high level information about the game session, including info like duration, gameMode, and more. Each Match has two Rosters.
 
 
 Rosters
@@ -11,19 +11,19 @@ Rosters
 
 Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
-**Javascript:**
-
-.. code-block:: javascript
+.. code-block:: none
 
   {
     "type": "roster",
     "id": "eca49808-d510-11e6-bf26-cec0c932ce01",
     "attributes": {
+      "shardId": "na",
       "stats": {
         "acesEarned": 2,
         "gold": 32344,
         "etc..."
-      }
+      },
+      "won": "false"
     },
     "relationships": {
       "team": {
@@ -51,9 +51,7 @@ Participants
 
 Participant objects track each member in a Roster. Participants may be anonymous Players, registered Players, or bots. In the case where the Participant is a registered Player, the Participant will have a single Player relationship. Participant objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
-**Javascript:**
-
-.. code-block:: javascript
+.. code-block:: none
 
   {
     "type": "participant",
@@ -68,6 +66,14 @@ Participant objects track each member in a Roster. Participants may be anonymous
         "etc..."
       }
     }
+    "relationships": {
+      "player": {
+        "data": {
+          "type": "player",
+          "id": "973caffa-11cf-11e5-8fbe-06d90c28bf1a"
+        }
+      }
+    }
   }
 
 
@@ -80,19 +86,19 @@ This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
 **HTTP Request**
 |  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
 
-=========================== ================ =================================================================================================================== 
-Parameter                   Default          Description                                               
-=========================== ================ ===================================================================================================================
-page[offset]                0                 Allows paging over results                                     
-page[limit ]                50                The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.             
-sort                        createdAt         By default, Matches are sorted by creation time ascending.
-filter[createdAt-start]     3hrs ago          Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
-filter[createdAt-end]       Now               Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
-filter[playerNames]         none              Filters by player name. Usage: filter[playerNames]=player1,player2,...
-filter[playerIds]           none              Filters by player Id. Usage:filter[playerIds]=playerId,playerId,...
-filter[teamNames]           none              Filters by team names. Team names are the same as the in game team tags. Usage: filter[teamNames]=TSM,team2,...
-filter[gameMode]            none              Filter by gameMode Usage: filter[gameMode]=casual,ranked,...
-=========================== ================ ===================================================================================================================
+========================= =========== =================================================================================================================
+Parameter                 Default     Description                                               
+========================= =========== =================================================================================================================
+page[offset]              0           Allows paging over results                                     
+page[limit ]              50          The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.             
+sort                      createdAt   By default, Matches are sorted by creation time ascending.
+filter[createdAt-start]   3hrs ago    Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
+filter[createdAt-end]     Now         Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
+filter[playerNames]       none        Filters by player name. Usage: filter[playerNames]=player1,player2,...
+filter[playerIds]         none        Filters by player Id. Usage:filter[playerIds]=playerId,playerId,...
+filter[teamNames]         none        Filters by team names. Team names are the same as the in game team tags. Usage: filter[teamNames]=TSM,team2,...
+filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]=casual,ranked,...
+========================= =========== =================================================================================================================
 
 *Remember — a happy match is an authenticated match!*
 
@@ -103,72 +109,6 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-02-27T13:25:30Z&filter[playerNames]=<playerName>" \
     -H "Authorization: Bearer <api-key>" \
     -H "Accept: application/vnd.api+json"
-
-    //The above command returns JSON structured like this:
-
-    {
-    "data": [
-      {
-        "type": "match",
-        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-        "attributes": {
-          "createdAt": "2017-01-06T20:30:08Z",
-          "duration": 1482195372,
-          "gameMode": "casual",
-          "patchVersion": "1.0.0",
-          "shardId": "na",
-          "stats": "acesEarned: 3, etc..."
-        },
-        "relationships": {
-          "rosters": {
-            "data": [{
-              "type": "roster",
-              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-            }, {
-              "type": "roster",
-              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-            }]
-          }
-        }
-      }
-    ]
-  }
-
-**Java:**
-
-.. code-block:: java
-
-  //*There are a variety of Java HTTP libraries that support query-parameters.
-
-  //The above command returns JSON structured like this:
-
-  {
-    "data": [
-      {
-        "type": "match",
-        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-        "attributes": {
-          "createdAt": "2017-01-06T20:30:08Z",
-          "duration": 1482195372,
-          "gameMode": "casual",
-          "patchVersion": "1.0.0",
-          "shardId": "na",
-          "stats": "acesEarned: 3, etc..."
-        },
-        "relationships": {
-          "rosters": {
-            "data": [{
-              "type": "roster",
-              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-            }, {
-              "type": "roster",
-              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-            }]
-          }
-        }
-      }
-    ]
-  }
 
 **Python:**
 
@@ -192,36 +132,6 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
 
   r = requests.get(url, headers=header, params=query)
 
-  //The above command returns JSON structured like this:
-
-  {
-    "data": [
-      {
-        "type": "match",
-        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-        "attributes": {
-          "createdAt": "2017-01-06T20:30:08Z",
-          "duration": 1482195372,
-          "gameMode": "casual",
-          "patchVersion": "1.0.0",
-          "shardId": "na",
-          "stats": "acesEarned: 3, etc..."
-        },
-        "relationships": {
-          "rosters": {
-            "data": [{
-              "type": "roster",
-              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-            }, {
-              "type": "roster",
-              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-            }]
-          }
-        }
-      }
-    ]
-  }
-
 **Go:**
 
 .. code-block:: go
@@ -234,7 +144,9 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
   req.URL.RawQuery = q.Encode()
   res, _ := client.Do(req)
 
-  //The above command returns JSON structured like this:
+The above commands return JSON structured like this:
+
+.. code-block:: none
 
   {
     "data": [
@@ -251,18 +163,22 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
         },
         "relationships": {
           "rosters": {
-            "data": [{
-              "type": "roster",
-              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-            }, {
-              "type": "roster",
-              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-            }]
+            "data": [
+              {
+                "type": "roster",
+                "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+              },
+              {
+                "type": "roster",
+                "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+              }
+            ]
           }
         }
       }
     ]
   }
+
 
 Get a Single Match
 ---------------------------
@@ -273,8 +189,12 @@ This endpoint retrieves a specific match.
 |  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
 
 **URL Parameters**
-|  Parameter: ``ID``
-|  Description: ``The ID of the match to retrieve``
+
+=========== ========= =================================
+Parameter   Default   Description
+=========== ========= =================================
+ID          none      The ID of the match to retrieve
+=========== ========= =================================
 
 **Shell:**
 
@@ -284,7 +204,9 @@ This endpoint retrieves a specific match.
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-    //The above command returns JSON structured like this:
+The above command returns JSON structured like this:
+
+.. code-block:: none
 
   {
     "data": {
@@ -300,49 +222,44 @@ This endpoint retrieves a specific match.
       },
       "relationships": {
         "rosters": {
-          "data": [{
-            "type": "roster",
-            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-          }, {
-            "type": "roster",
-            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-          }]
+          "data": [
+            {
+              "type": "roster",
+              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+            }, 
+            {
+              "type": "roster",
+              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+            }
+          ]
         }
       }
     }
   }
 
-**Javascript:**
 
-.. code-block:: Javascript
+Where is my match?
+---------------------------
 
-    //There are a variety of Java HTTP libraries that support URL parameters
+We purposefully do not allow certain matches to be displayed. Specifically, for a match to be valid it must meet all of the following requirements.
 
-    {
-    "data": {
-      "type": "match",
-      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-      "attributes": {
-        "createdAt": "2017-01-06T20:30:08Z",
-        "duration": 1482195372,
-        "gameMode": "casual",
-        "patchVersion": "1.0.0",
-        "shardId": "na",
-        "stats": "acesEarned: 3, etc..."
-      },
-      "relationships": {
-        "rosters": {
-          "data": [{
-            "type": "roster",
-            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-          }, {
-            "type": "roster",
-            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-          }]
-        }
-      }
-    }
-  }
+The game mode must be one of the following:
+
+* ranked
+* casual
+* private
+* private_party_draft_match
+* private_party_aral_match
+* private_party_blitz_match
+* casual_aral
+* blitz_pvp_ranked
+
+The match must NOT have ended with one of the following statuses:
+
+* exitpractice
+* notenoughplayers
+
+In order to allow our pro-players to practice, we also reject matches where there are no ranked players and the game mode is private.
 
 .. toctree::
   :maxdepth: 2

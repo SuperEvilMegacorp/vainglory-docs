@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Teams &#8212; Battelrite 0.2 documentation</title>
-    <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
+    <title>Teams &#8212; Vainglory 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/css/vainglory.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -21,6 +21,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/vainglory.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Links" href="../links/links.html" />
@@ -59,7 +60,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Vainglory 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>  
@@ -81,16 +82,29 @@
 <div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams</span></code></div>
 </div>
 <p><strong>URL Parameters</strong></p>
-<div class="line-block">
-<div class="line">Parameter: filter[teamNames]</div>
-<div class="line">Defailt: none</div>
-<div class="line">Description: Filters by team name. Usage: filter[teamNames]=team1</div>
-</div>
-<div class="line-block">
-<div class="line">Parameter: filter[teamIds]</div>
-<div class="line">Defailt: none</div>
-<div class="line">Description: Filter by team id. Usage: filter[teamIds]=12345</div>
-</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="11%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Default</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>filter[teamNames]</td>
+<td>none</td>
+<td>Filters by team name. Usage: filter[teamNames]=team1</td>
+</tr>
+<tr class="row-odd"><td>filter[teamIds]</td>
+<td>none</td>
+<td>Filter by team id. Usage: filter[teamIds]=12345</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Shell:</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/teams?filter[teamNames]=team1&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
@@ -106,24 +120,85 @@
 <div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;</span></code></div>
 </div>
 <p><strong>URL Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="17%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Default</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ID</td>
+<td>none</td>
+<td>The ID of the team to retrieve</td>
+</tr>
+</tbody>
+</table>
 <div class="line-block">
 <div class="line">Parameter: ID</div>
-<div class="line">Description: The ID of the team to retrieve</div>
+<div class="line">Description:</div>
 </div>
 <p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>  curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;&quot;</span> <span class="se">\</span>
-  -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
-  -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
-
-  The above <span class="nb">command</span> returns JSON structured like this:
-
-<span class="o">{</span>
-  <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
-  <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Max&quot;</span>,
-  <span class="s2">&quot;breed&quot;</span>: <span class="s2">&quot;unknown&quot;</span>,
-  <span class="s2">&quot;fluffiness&quot;</span>: <span class="m">5</span>,
-  <span class="s2">&quot;cuteness&quot;</span>: <span class="m">10</span>
-<span class="o">}</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+<p>The above command returns JSON structured like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;id&quot;: 2,
+  &quot;name&quot;: &quot;Max&quot;,
+  &quot;breed&quot;: &quot;unknown&quot;,
+  &quot;fluffiness&quot;: 5,
+  &quot;cuteness&quot;: 10
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="links-coming-soon">
+<h2>Links (Coming Soon!)<a class="headerlink" href="#links-coming-soon" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint checks to see if a link object exists for a given code.</p>
+<p><strong>HTTP Request</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/link</span></code></div>
+</div>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -XPOST <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-a-link">
+<h2>Post a Link<a class="headerlink" href="#post-a-link" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint creates a PlayerLink object if the verification code matches the one provided by the game.</p>
+<p><strong>HTTP Request</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">POST</span> <span class="pre">https://api.dc01.gamelockerapp.com/link/{player_id}</span></code></div>
+</div>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -XPOST <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="player-link">
+<h2>Player Link<a class="headerlink" href="#player-link" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;attributes&quot;: {
+    &quot;playerId&quot;: &quot;fb374a7b-78be-4fcc-83ed-6a532a8a6f55&quot;,
+    &quot;shardId&quot;: &quot;na&quot;,
+    &quot;titleId&quot;: &quot;semc-vainglory&quot;
+  },
+  &quot;id&quot;: &quot;2454e5ac-0a69-4468-ad12-8616f066e817&quot;,
+  &quot;type&quot;: &quot;playerLink&quot;
+}
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -153,6 +228,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-collection-of-teams">Get a collection of Teams</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-single-team">Get a Single Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#links-coming-soon">Links (Coming Soon!)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-a-link">Post a Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-link">Player Link</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
@@ -180,7 +258,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Vainglory 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>

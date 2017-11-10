@@ -18,12 +18,12 @@ This endpoint retrieves a collection of up to 6 teams.
 
 **URL Parameters**
 
-=================  ==============  =============================================================
-Parameter    	   Default         Description
-=================  ==============  =============================================================
-filter[teamNames]  none            Filters by team name. Usage: filter[teamNames]=team1
-filter[teamIds]    none            Filter by team id. Usage: filter[teamIds]=12345
-=================  ==============  =============================================================
+=================== ========= ======================================================
+Parameter    	      Default   Description
+=================== ========= ======================================================
+filter[teamNames]   none      Filters by team name. Usage: filter[teamNames]=team1
+filter[teamIds]     none      Filter by team id. Usage: filter[teamIds]=12345
+=================== ========= ======================================================
 
 **Shell:**
 
@@ -46,27 +46,35 @@ This endpoint retrieves a specific team.
 
 **URL Parameters**
 
+=========== ========= ================================
+Parameter   Default   Description
+=========== ========= ================================
+ID          none      The ID of the team to retrieve
+=========== ========= ================================
+
 |  Parameter: ID
-|  Description: The ID of the team to retrieve
+|  Description: 
 
 
-**Javascript:**
+**Shell:**
 
-.. code-block:: javascript
+.. code-block:: shell
 
-	  curl "https://api.dc01.gamelockerapp.com/teams/<ID>" \
-	  -H "Authorization: Bearer <api-key>" \
-	  -H "Accept: application/vnd.api+json"
+  curl "https://api.dc01.gamelockerapp.com/teams/<ID>" \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Accept: application/vnd.api+json"
 
-	  The above command returns JSON structured like this:
-	  
-	{
-	  "id": 2,
-	  "name": "Max",
-	  "breed": "unknown",
-	  "fluffiness": 5,
-	  "cuteness": 10
-	}
+The above command returns JSON structured like this:
+
+.. code-block:: none
+
+  {
+    "id": 2,
+    "name": "Max",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
 
 
 Links (Coming Soon!)
@@ -78,11 +86,11 @@ This endpoint checks to see if a link object exists for a given code.
 
 |  ``GET https://api.dc01.gamelockerapp.com/link``
 
-**Javascript:**
+**Shell:**
 
-.. code-block:: javascript
+.. code-block:: shell
 
-	curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
+  curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -97,11 +105,11 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 
 |  ``POST https://api.dc01.gamelockerapp.com/link/{player_id}``
 
-**Javascript:**
+**Shell:**
 
-.. code-block:: javascript
+.. code-block:: shell
 
-	curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
+  curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -109,19 +117,17 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 Player Link
 ----------------
 
-**Javascript:**
+.. code-block:: none
 
-.. code-block:: javascript
-
-	{
-  "attributes": {
+  {
+    "attributes": {
       "playerId": "fb374a7b-78be-4fcc-83ed-6a532a8a6f55",
       "shardId": "na",
       "titleId": "semc-vainglory"
-  },
-  "id": "2454e5ac-0a69-4468-ad12-8616f066e817",
-  "type": "playerLink"
-	}
+    },
+    "id": "2454e5ac-0a69-4468-ad12-8616f066e817",
+    "type": "playerLink"
+  }
 
 .. toctree::
   :maxdepth: 2
