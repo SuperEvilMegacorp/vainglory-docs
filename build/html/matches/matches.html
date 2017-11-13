@@ -33,12 +33,11 @@
 	<div class="menu-top-outer clearfix">
 		<div class="wrapper clearfix">
 			<a href="/" id="site-logo"></a>
-			<span id="logSignBtn" class="btn">Login / Signup</span>
+			<a href="https://developer.vainglorygame.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup </span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
-					<li><a class="active" href="guides.html">Documentation</a></li>
-					<li><a href="faq.html">Faqs</a></li>
-					<li><a href="creations.html">Creations</a></li>
+					<li><a class="active" href="index.html">Documentation</a></li>
+					<li><a href="https://developer.vainglorygame.com/faq">Faqs</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -160,8 +159,8 @@
 <td>Allows paging over results</td>
 </tr>
 <tr class="row-odd"><td>page[limit ]</td>
-<td>50</td>
-<td>The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.</td>
+<td>5</td>
+<td>The default (and current maximum) is 5.Values less than 5 and great than 1 are supported.</td>
 </tr>
 <tr class="row-even"><td>sort</td>
 <td>createdAt</td>
@@ -295,7 +294,7 @@
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p>The above command returns JSON structured like this:</p>
+<p>The above commands returns JSON structured like this:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
   &quot;data&quot;: {
     &quot;type&quot;: &quot;match&quot;,

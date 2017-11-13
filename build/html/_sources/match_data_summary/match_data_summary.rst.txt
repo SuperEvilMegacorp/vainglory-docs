@@ -16,7 +16,7 @@ ID                 str             Match ID
 createdAt          str (iso8601)   Time of Match Played
 duration           int             Time of match in seconds
 gameMode           str             Game Mode
-patchVersion       str             Version of API
+patchVersion       str             Version of the game
 shardID            str             Match Shard
 stats              map             See Match.stats
 assets             obj             See Match.assets
