@@ -8,7 +8,7 @@ Payload
 
 All Server responses contain a root JSON object.
 
-A response will contain at least one of the following top-level members:
+Every response will contain at least one of the following top-level members:
 
 * ``data`` : The response's “primary data”
 * ``errors`` : An array of error objects

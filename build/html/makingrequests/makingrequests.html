@@ -74,8 +74,8 @@
 <span id="makingrequests"></span><h1>Making Requests<a class="headerlink" href="#making-requests" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="content-negotiation">
 <h2>Content Negotiation<a class="headerlink" href="#content-negotiation" title="Permalink to this headline">¶</a></h2>
-<p>Clients using the api should specify that they accept responses using the <code class="docutils literal"><span class="pre">application/vnd.api+json</span></code> format, for convenience we will also accept <code class="docutils literal"><span class="pre">application/json</span></code> since it is the default for many popular client libraries.</p>
-<p>The Server will respond with a <code class="docutils literal"><span class="pre">Content-Type</span></code> header that mirrors the format requested by the Client.</p>
+<p>Clients using the API should specify that they accept responses using the <code class="docutils literal"><span class="pre">application/vnd.api+json</span></code> format. For convenience, we will also accept <code class="docutils literal"><span class="pre">application/json</span></code> since it is the default for many popular client libraries.</p>
+<p>The Server will respond with a <code class="docutils literal"><span class="pre">Content-Type</span></code> header that mirrors the format requested by the client.</p>
 </div>
 <div class="section" id="regions">
 <h2>Regions<a class="headerlink" href="#regions" title="Permalink to this headline">¶</a></h2>
@@ -89,7 +89,7 @@
 <li><strong>East Asia:</strong> <code class="docutils literal"><span class="pre">ea</span></code></li>
 <li><strong>Southeast Asia (SEA):</strong> <code class="docutils literal"><span class="pre">sg</span></code></li>
 </ul>
-<p><em>Tournament Region Shards:</em> To find data regarding professional eSport, which take place on the private client only, please use the following shards:</p>
+<p><em>Tournament Region Shards:</em> To find data regarding professional eSports, which take place on the private client only, please use the following shards:</p>
 <ul class="simple">
 <li><strong>North America Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-na</span></code></li>
 <li><strong>Europe Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-eu</span></code></li>
@@ -104,7 +104,7 @@
 </div>
 <div class="section" id="gzip">
 <h2>GZIP<a class="headerlink" href="#gzip" title="Permalink to this headline">¶</a></h2>
-<p>Clients can specify the header <code class="docutils literal"><span class="pre">Accept-Encoding:</span> <span class="pre">gzip</span></code> and the server will compress responses.
+<p>Clients can specify the header <code class="docutils literal"><span class="pre">Accept-Encoding:</span> <span class="pre">gzip</span></code>, and the server will compress responses.
 Responses will be returned with <code class="docutils literal"><span class="pre">Content-Encoding:</span> <span class="pre">gzip</span></code>.</p>
 <p>Given the size of matches, this can have significant performance benefits.</p>
 <p>To specify the header Accept-Encoding, use this code:</p>
@@ -128,7 +128,7 @@ Responses will be returned with <code class="docutils literal"><span class="pre"
 <div class="section" id="pagination">
 <h2>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h2>
 <p>Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 3 through 5 you would specify a limit of 5 and an offset of 3:</p>
-<p>If not specified, the server will default to <code class="docutils literal"><span class="pre">offset=0</span></code>, and the following values for <code class="docutils literal"><span class="pre">limit</span></code>:</p>
+<p>If not specified, the server will default to an <code class="docutils literal"><span class="pre">offset</span></code> of 0, and the following values for <code class="docutils literal"><span class="pre">limit</span></code> depending on the endpoint:</p>
 <div class="line-block">
 <div class="line">Matches: 5</div>
 <div class="line">players/samples: 6</div>
@@ -147,15 +147,15 @@ Responses will be returned with <code class="docutils literal"><span class="pre"
 },
 </pre></div>
 </div>
-<p>There will also be a previous page link when appropriate.</p>
+<p>There will also be a “previous” page link when appropriate.</p>
 </div>
 <div class="section" id="search-time">
 <h2>Search Time<a class="headerlink" href="#search-time" title="Permalink to this headline">¶</a></h2>
 <p><strong>Defaults:</strong></p>
 <ul class="simple">
-<li>Data retention period: 120 days.</li>
-<li>The max search time span between createdAt-start and createdAt-end: 28 days.</li>
-<li>If you don’t specify createdAt-start, the default is now - 28 days.</li>
+<li>Data retention period is 120 days.</li>
+<li>The max search time span between createdAt-start and createdAt-end is 28 days.</li>
+<li>If you don’t specify createdAt-start, the default is now 28 days.</li>
 <li>If you don’t specify createdAt-end, the default is now.</li>
 <li>If you search for a time &gt; now, the default is now.</li>
 <li>If you search for a time before the retention period, the default is the retention period (now - 120 days).</li>
@@ -167,11 +167,12 @@ Responses will be returned with <code class="docutils literal"><span class="pre"
 <p>The default sort order is always ascending. Ascending corresponds to the standard order of numbers and letters, i.e. A to Z, 0 to 9). For dates and times, ascending means that earlier values precede later ones e.g. 1/1/2000 will sort ahead of 1/1/2001.</p>
 <p>All resource collections have a default sort order. In addition, some resources provide the ability to sort according to one or more criteria (“sort fields”).</p>
 <p>If sort fields are prefixed with a minus, the order will be changed to descending.</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>//The example below will return the oldest articles first:
-&quot;.../matches?sort=createdAt&quot;
-
-//The example below will return the newest articles first:
-&quot;.../matches?sort=-createdAt&quot;
+<p>The example below will return the oldest articles first:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;.../matches?sort=createdAt&quot;
+</pre></div>
+</div>
+<p>The example below will return the newest articles first:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;.../matches?sort=-createdAt&quot;
 </pre></div>
 </div>
 </div>
@@ -187,7 +188,7 @@ Responses will be returned with <code class="docutils literal"><span class="pre"
 </div>
 <div class="section" id="cross-origin-resource-sharing">
 <h2>Cross Origin Resource Sharing<a class="headerlink" href="#cross-origin-resource-sharing" title="Permalink to this headline">¶</a></h2>
-<p>This is what the CORS preflight request looks like. The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation, or this intro from the HTML 5 Security Guide.</p>
+<p>This is what the CORS preflight request looks like. The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation <a class="reference external" href="https://www.w3.org/TR/cors/">here</a>.</p>
 <p>Here’s a sample request sent from a browser hitting <a class="reference external" href="http://example.com">http://example.com</a>:</p>
 <p><strong>Shell:</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl -i https://api.dc01.gamelockerapp.com/status -H <span class="s2">&quot;Origin: http://example.com&quot;</span>

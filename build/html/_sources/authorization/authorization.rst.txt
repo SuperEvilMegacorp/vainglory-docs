@@ -3,7 +3,7 @@
 Authorization
 =============
 
-We require a JSON Web Token `JWT <https://jwt.io/>`_. be sent along with your request via the Authorization header. There's no need to create a JWT manually, as you can use the API key you receive when you register for the API - `Register Here! <https://developer.vainglorygame.com/users/sign_in/>`_.
+We require a JSON Web Token `JWT <https://jwt.io/>`_ be sent along with your request via the ``Authorization`` header. There's no need to create a JWT manually, as you can use the API key you receive when you register for the API - `Register Here! <https://developer.vainglorygame.com/users/sign_in/>`_.
 
 JWTs are passed as bearer tokens in the Authorization header, and look like the following:
 

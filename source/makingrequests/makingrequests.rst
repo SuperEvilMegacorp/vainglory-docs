@@ -3,12 +3,14 @@
 Making Requests
 ===============
 
+
 Content Negotiation
 ---------------------------
 
-Clients using the api should specify that they accept responses using the ``application/vnd.api+json`` format, for convenience we will also accept ``application/json`` since it is the default for many popular client libraries.
+Clients using the API should specify that they accept responses using the ``application/vnd.api+json`` format. For convenience, we will also accept ``application/json`` since it is the default for many popular client libraries.
 
-The Server will respond with a ``Content-Type`` header that mirrors the format requested by the Client.
+The Server will respond with a ``Content-Type`` header that mirrors the format requested by the client.
+
 
 Regions
 ---------------------------
@@ -24,7 +26,7 @@ The Vainglory Game Data Service currently supports the following regions:
 * **East Asia:** ``ea``
 * **Southeast Asia (SEA):** ``sg``
 
-*Tournament Region Shards:* To find data regarding professional eSport, which take place on the private client only, please use the following shards:
+*Tournament Region Shards:* To find data regarding professional eSports, which take place on the private client only, please use the following shards:
 
 * **North America Tournaments:** ``tournament-na``
 * **Europe Tournaments:** ``tournament-eu``
@@ -40,11 +42,10 @@ To specify a region, use this code:
   "...gamelockerapp.com/shards/<region>/..."
 
 
-
 GZIP
 ---------------------------
 
-Clients can specify the header ``Accept-Encoding: gzip`` and the server will compress responses.
+Clients can specify the header ``Accept-Encoding: gzip``, and the server will compress responses.
 Responses will be returned with ``Content-Encoding: gzip``.
 
 Given the size of matches, this can have significant performance benefits.
@@ -79,13 +80,12 @@ To specify the header Accept-Encoding, use this code:
   req.Header.Set("Accept-Encoding", "gzip")
 
 
-
 Pagination
 ---------------------------
 
 Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 3 through 5 you would specify a limit of 5 and an offset of 3:
 
-If not specified, the server will default to ``offset=0``, and the following values for ``limit``:
+If not specified, the server will default to an ``offset`` of 0, and the following values for ``limit`` depending on the endpoint:
 
 | Matches: 5
 | players/samples: 6
@@ -108,7 +108,7 @@ At the end of the JSON returned by the above command you will find links to the 
     "self": "https://api.dc01.gamelockerapp.com/shards/sg/matches?page[limit]=5&page[offset]=3"
   },
 
-There will also be a previous page link when appropriate.
+There will also be a "previous" page link when appropriate.
 
 
 Search Time
@@ -117,9 +117,9 @@ Search Time
 
 **Defaults:**
 
-* Data retention period: 120 days.
-* The max search time span between createdAt-start and createdAt-end: 28 days.
-* If you don't specify createdAt-start, the default is now - 28 days.
+* Data retention period is 120 days.
+* The max search time span between createdAt-start and createdAt-end is 28 days.
+* If you don't specify createdAt-start, the default is now 28 days.
 * If you don't specify createdAt-end, the default is now.
 * If you search for a time > now, the default is now.
 * If you search for a time before the retention period, the default is the retention period (now - 120 days).
@@ -135,14 +135,17 @@ All resource collections have a default sort order. In addition, some resources 
 
 If sort fields are prefixed with a minus, the order will be changed to descending.
 
+The example below will return the oldest articles first:
+
 .. code-block:: none
 
-  //The example below will return the oldest articles first:
   ".../matches?sort=createdAt"
 
-  //The example below will return the newest articles first:
-  ".../matches?sort=-createdAt"
+The example below will return the newest articles first:
 
+.. code-block:: none
+
+  ".../matches?sort=-createdAt"
 
 
 JSON-P Callbacks
@@ -163,7 +166,7 @@ You can send a ``?callback`` parameter to any GET call to have the results wrapp
 Cross Origin Resource Sharing
 -----------------------------
 
-This is what the CORS preflight request looks like. The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation, or this intro from the HTML 5 Security Guide.
+This is what the CORS preflight request looks like. The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation `here <https://www.w3.org/TR/cors/>`_.
 
 Here's a sample request sent from a browser hitting http://example.com:
 
@@ -188,8 +191,6 @@ This is what the CORS preflight request looks like:
   Access-Control-Allow-Methods: GET,POST,OPTIONS
   Access-Control-Allow-Origin: *
   Access-Control-Max-Age: 86400
-
-
 
 
 .. toctree::

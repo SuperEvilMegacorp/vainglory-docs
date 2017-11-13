@@ -39,7 +39,7 @@ ID          none      The ID of the player to retrieve
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-**The above command returns JSON structured like this:**
+**The above commands returns JSON structured like this:**
 
 .. code-block:: none
 
