@@ -8,6 +8,27 @@ input[type=search] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
+@font-face {
+  font-family: 'Antonio';
+  src: url("../fonts/Antonio-Light.eot");
+  src: url("../fonts/Antonio-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Antonio-Light.woff") format("woff"), url("../fonts/Antonio-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Antonio';
+  src: url("../fonts/Antonio-Regular.eot");
+  src: url("../fonts/Antonio-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Antonio-Regular.woff") format("woff"), url("../fonts/Antonio-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Antonio';
+  src: url("../fonts/Antonio-Bold.eot");
+  src: url("../fonts/Antonio-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Antonio-Bold.woff") format("woff"), url("../fonts/Antonio-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
 body {
   color: #afb7b9;
   font-size: 14px;
@@ -58,7 +79,7 @@ h6,
 blockquote {
   font-weight: 100;
   text-transform: uppercase;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "Antonio", sans-serif;
   color: #eaa900;
   letter-spacing: 0.1em; }
 
@@ -118,7 +139,8 @@ header {
   z-index: 25;
   position: relative;
   width: 100%;
-  background-color: #1d191e;
+  background-color: #242426;
+  border-bottom: 1px solid #434343;
 }
 
 #site-logo {
@@ -128,15 +150,15 @@ header {
   float: left;
   background-image: url(../images/logo.png);
   background-repeat: no-repeat;
-  height: 38px;
-  width: 73px;
-  background-size: 73px 38px;
+  height: 41px;
+  width: 104px;
+  background-size: 104px 41px;
   margin-top: 14px;
   margin-bottom: 14px; }
   @media (max-width: 950px) {
     #site-logo {
-      margin-top: 13px;
-      margin-bottom: 13px; } }
+      margin-top: 14px;
+      margin-bottom: 14px; } }
   #site-logo img {
     display: block;
     width: 100%;
@@ -195,11 +217,11 @@ font-size: 0px;
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Antonio", sans-serif;
     padding: 26px 10px;
     font-size: 14.848px;
     font-weight: 400;
-    color: white;
+    color: #afb7b9;
     letter-spacing: .03em; }
     @media (max-width: 950px) {
       .main-menu li > a {
@@ -380,21 +402,21 @@ main-wrapper:after,
               box-shadow: none;
       text-transform: uppercase;
       background-size: 100% 100%;
-      min-width: 240px;
+      min-width: 0;
       max-width: 100%;
       /*background-image: url(../images/vainglory/btn-1.png);*/
       border: none;
-      font-family: "Ubuntu", sans-serif;
-      font-size: 16px;
-      padding: 9px 17px;
-      letter-spacing: 0.19em; }
+      font-family: "Antonio", sans-serif;
+      font-size: 14px;
+      padding: 10px 18px;
+      letter-spacing: 0.065em; }
       .btn:hover, [type="submit"]:hover, .btn:focus, [type="submit"]:focus {
         border-color: transparent;
         background-color: #ffffff;
         color: #000000 !important;
         outline: none; }
       .btn + .btn, *[type="submit"] + .btn, .btn + *[type="submit"], *[type="submit"] + *[type="submit"] {
-        margin-left: 4.9%; }
+        margin-right: -0.7%; }
       @media (max-width: 950px) {
         .btn, *[type="submit"] {
           font-size: 14px !important;
