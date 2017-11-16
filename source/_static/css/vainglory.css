@@ -382,7 +382,7 @@ main-wrapper:after,
       background-size: 100% 100%;
       min-width: 240px;
       max-width: 100%;
-      background-image: url(../images/vainglory/btn-1.png);
+      /*background-image: url(../images/vainglory/btn-1.png);*/
       border: none;
       font-family: "Ubuntu", sans-serif;
       font-size: 16px;
@@ -390,7 +390,8 @@ main-wrapper:after,
       letter-spacing: 0.19em; }
       .btn:hover, [type="submit"]:hover, .btn:focus, [type="submit"]:focus {
         border-color: transparent;
-        color: #0c9590 !important;
+        background-color: #ffffff;
+        color: #000000 !important;
         outline: none; }
       .btn + .btn, *[type="submit"] + .btn, .btn + *[type="submit"], *[type="submit"] + *[type="submit"] {
         margin-left: 4.9%; }
