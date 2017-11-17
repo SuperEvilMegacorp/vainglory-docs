@@ -433,7 +433,7 @@ main-wrapper:after,
         .btn.alt:hover, .alt[type="submit"]:hover, .btn.alt:focus, .alt[type="submit"]:focus {
           color: #7e1a01 !important; }
 
-    ::-webkit-input-placeholder {
+    /*::-webkit-input-placeholder {
       font-size: 16px;
       font-size: 1.6rem;
       color: #191a1b;
@@ -446,7 +446,7 @@ main-wrapper:after,
 
     :-moz-placeholder {
       /* Firefox 18- */
-      font-size: 16px;
+      /*font-size: 16px;
       font-size: 1.6rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
@@ -458,7 +458,7 @@ main-wrapper:after,
 
     ::-moz-placeholder {
       /* Firefox 19+ */
-      font-size: 16px;
+      /*font-size: 16px;
       font-size: 1.6rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
@@ -477,7 +477,7 @@ main-wrapper:after,
       @media (max-width: 950px) {
         :-ms-input-placeholder {
           font-size: 14px;
-          font-size: 1.4rem; } }
+          font-size: 1.4rem; } }*/
 
 
 
