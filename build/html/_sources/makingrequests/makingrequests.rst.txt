@@ -148,21 +148,6 @@ The example below will return the newest articles first:
   ".../matches?sort=-createdAt"
 
 
-JSON-P Callbacks
----------------------------
-
-You can send a ``?callback`` parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
-
-**Shell:**
-
-.. code-block:: shell
-
-  curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
-  -H "Authorization: Bearer <api-key>" \
-  -H "Accept: application/vnd.api+json"
-
-
-
 Cross Origin Resource Sharing
 -----------------------------
 

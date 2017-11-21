@@ -21,6 +21,7 @@ shardID            str             Match Shard
 stats              map             See Match.stats
 assets             obj             See Match.assets
 rosters            obj             See Rosters
+spectators         obj             Spectating participants
 titldId            str             Identifies the studio and game
 =================  ==============  ================================
 
@@ -92,9 +93,6 @@ id                 str             ID of Team or None
 name               str             Name of Team or None
 type               str             team
 titleId            str             Identifies the studio and game
-shardId            str             Region Shard
-createdAt          str (iso8601)   Team creation time
-assets             obj             Same structure as Match.assets
 =================  ==============  ================================
 
 Participants Object

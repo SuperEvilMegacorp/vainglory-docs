@@ -16,11 +16,10 @@ Every response will contain at least one of the following top-level members:
 A response may contain any of these top-level members:
 
 * ``links``: A links object related to the primary data.
-* ``included``: An array of resource objects that are related to the primary data and/or each other (“included resources”).
+* ``included``: An array of resource objects that are related to the primary data and/or each other (“included resources”).4
+* ``meta``: not currently used.
 
 If a document does not contain a top-level data key, the included member will not be present either.
-
-The following primary data is a single resource object:
 
 .. code-block:: none
 
@@ -34,15 +33,13 @@ The following primary data is a single resource object:
       "relationships": {
         // ... this matches relationships
       }
-    }
+    },
+    "included": [
+      {...},
+      ...
+    ],
+    "meta": {}
   }
-  {
-    "data": {
-      "type": "match",
-      "id": "1"
-    }
-  }
-
 
 
 Rate Limits
