@@ -52,7 +52,7 @@
             
   <div class="section" id="matches">
 <span id="id1"></span><h1>Matches<a class="headerlink" href="#matches" title="Permalink to this headline">¶</a></h1>
-<p>Match records are created every time players complete a game session. Each Match contains high level information about the game session, including info like duration, gameMode, and more. Each Match has two Rosters.</p>
+<p>Match records are created every time players complete a game session. Each Match contains high level information about the game session, i.e. duration, gameMode, etc. Each Match has two Rosters.</p>
 <div class="section" id="rosters">
 <h2>Rosters<a class="headerlink" href="#rosters" title="Permalink to this headline">¶</a></h2>
 <p>Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.</p>
@@ -122,6 +122,7 @@
 <p>This endpoint retrieves data from matches. Bulk scraping matches is prohibited.</p>
 <p><strong>HTTP Request</strong>
 |  <code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
+<p><strong>Query Parameters</strong></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -139,16 +140,16 @@
 <td>0</td>
 <td>Allows paging over results</td>
 </tr>
-<tr class="row-odd"><td>page[limit ]</td>
+<tr class="row-odd"><td>page[limit]</td>
 <td>5</td>
-<td>The default (and current maximum) is 5.Values less than 5 and great than 1 are supported.</td>
+<td>The default (and maximum) is 5. Values less than 5 and greater than 1 are supported.</td>
 </tr>
 <tr class="row-even"><td>sort</td>
 <td>createdAt</td>
 <td>By default, Matches are sorted by creation time ascending.</td>
 </tr>
 <tr class="row-odd"><td>filter[createdAt-start]</td>
-<td>3hrs ago</td>
+<td>Now-28days</td>
 <td>Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z</td>
 </tr>
 <tr class="row-even"><td>filter[createdAt-end]</td>
@@ -222,7 +223,10 @@
         &quot;gameMode&quot;: &quot;casual&quot;,
         &quot;patchVersion&quot;: &quot;1.0.0&quot;,
         &quot;shardId&quot;: &quot;na&quot;,
-        &quot;stats&quot;: &quot;acesEarned: 3, etc...&quot;
+        &quot;stats&quot;: {
+          &quot;endGameReason: &quot;victory&quot;,
+          &quot;queue&quot;: &quot;ranked&quot;
+        }
       },
       &quot;relationships&quot;: {
         &quot;rosters&quot;: {
@@ -345,6 +349,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits/ratelimits.html">Rate Limits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../receivingresponses/receivingresponses.html">Receiving Responses</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Matches</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#rosters">Rosters</a></li>
@@ -356,10 +361,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelog</a></li>

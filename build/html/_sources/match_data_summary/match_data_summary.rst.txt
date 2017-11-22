@@ -3,55 +3,42 @@
 Match Data Summary
 ==================
 
-Special thanks to Kashz for helping to create this! GitHub: iAm-Kashif
-
 Match Object
 ---------------------------
 
 =================  ==============  ================================
 Variable    	   Type            Description
 =================  ==============  ================================
-Type               str             Match
-ID                 str             Match ID
+type               str             Match
+id                 str             Match ID
 createdAt          str (iso8601)   Time of Match Played
-duration           int             Time of match in seconds
+duration           int             Duration of match in seconds
 gameMode           str             Game Mode
 patchVersion       str             Version of the game
-shardID            str             Match Shard
-stats              map             See Match.stats
+shardId            str             Region Shard
+stats              map             Stats particular to the match
 assets             obj             See Match.assets
 rosters            obj             See Rosters
+rounds             obj             NA
 spectators         obj             Spectating participants
-titldId            str             Identifies the studio and game
+titleId            str             Identifies the studio and game
 =================  ==============  ================================
-
-
-**Match.stats (End of game statistics)**
-
-=================  ==============  ===========================
-Variable    	   Type            Description
-=================  ==============  ===========================
-endGameReason      str             "Victory" or "Defeat"
-queue              str             Game Mode
-=================  ==============  ===========================
-
 
 **Match.assets (Telemetry Data)**
 
 =================  ==============  ===========================
 Variable    	   Type            Description
 =================  ==============  ===========================
-Type               string          asset
+type               string          Asset
 createdAt          str (iso8601)   Time of Telemtry creation
-description        str             " "
+description        str             NA
 filename           str             telemetry.json
 id                 str             ID of Asset
 contentType        str             application/json
-name               map             telemetry
-url                obj             Link to Telemetry.json file
+name               map             Telemetry
+URL                obj             Link to Telemetry.json file
 shardId            str             Region Shard
 =================  ==============  ===========================
-
 
 Rosters Object
 ---------------------------
@@ -62,27 +49,11 @@ Variable    	   Type            Description
 id                 str             ID of Roster
 type               str             Roster
 participants       obj             See Participants
-stats              obj             See Rosters.stats
+stats              obj             Stats particular to rosters
 team               obj             See Rosters.team
-won                str             Indiciates if a roster won
+won                str             Indicates if a roster won
 shardId            str             Region Shard
 =================  ==============  ===========================
-
-
-**Rosters.stats**
-
-=================  =======================================
-Variable    	   Type          
-=================  =======================================
-acesEarned         int           
-gold               int  
-heroKills          int           
-krakenCaptures     int  
-side               Either "right/red" or "left/blue"  
-turretKills        int  
-turretRemaining    int  
-=================  =======================================
-
 
 **Rosters.team**
 
@@ -91,7 +62,7 @@ Variable    	   Type            Description
 =================  ==============  ================================
 id                 str             ID of Team or None
 name               str             Name of Team or None
-type               str             team
+type               str             Team
 titleId            str             Identifies the studio and game
 =================  ==============  ================================
 
@@ -104,8 +75,9 @@ Variable    	   Type            Description
 actor              str             Hero
 id                 str             Same as ID of Roster
 player             obj             See Participants.player
-stats              map             See Paticipants.stats
-type               str             participants
+stats              map             Stats particular to the participant
+type               str             Participants
+shardId            str             Region Shard
 =================  ==============  ===========================
 
 **Participants.player**
@@ -115,60 +87,13 @@ Variable    	   Type            Description
 =================  ==============  ===========================
 id                 str             UID of player
 name               str             IGN of player
-stats              map             See Participants.player.stats
-type               str             player
+stats              map             Stats particular to a player
+type               str             Player
 titleId            str             The studio and game title
 shardId            str             Region Shard
-createdAt          str (iso8601)   Player signup date
 assets             obj             Same structure as Match.assets
 patchVersion       str             Version of the game
 =================  ==============  ===========================
-
-**Particpants.stats**
-
-======================  =================================
-Variable    	        Type          
-======================  =================================
-assists	                int
-crystalMineCaptures    	int
-deaths	                int
-farm                	int
-firstAfkTime        	int: -1 for no AFK
-goldMineCaptures	    int
-itemGrants          	map of {itemsBought : int}
-itemSells	            map of {itemsSold : int}
-itemUses	            map of {itemsUsed : int}
-items	                list of final build (Len: 6)
-jungleKills          	int
-karmaLevel	            int
-kills	                int
-krakenCaptures         	int
-level	                int
-minionKills         	int
-nonJungleMinionKills	int
-skillTier             	int
-skinKey             	str
-turretCaptures	        int
-wentAfk	                bool
-winner              	bool
-======================  =================================
-
-
-**Particpants.player.stats**
-
-======================  =================================
-Variable    	        Type          
-======================  =================================
-level	                int
-lifetimeGold         	float
-lossStreak            	int
-played               	int
-played_ranked          	int
-winStreak               int
-wins                	int
-xp	                    int
-======================  =================================
-
 
 .. toctree::
   :maxdepth: 2

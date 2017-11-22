@@ -53,96 +53,23 @@
 <span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="api-v7-3-0">
 <h2>[API] v7.3.0<a class="headerlink" href="#api-v7-3-0" title="Permalink to this headline">¶</a></h2>
-<p>– Data retention is now 4 months</p>
-<p>– API will no longer 504 if requests are sent for time periods where data doesn’t exist [#248](<a class="reference external" href="https://github.com/madglory/gamelocker-vainglory/issues/248">https://github.com/madglory/gamelocker-vainglory/issues/248</a>)</p>
-<p>– played_aral and played_blitz datapoints are now available [#270](<a class="reference external" href="https://github.com/madglory/gamelocker-vainglory/issues/270">https://github.com/madglory/gamelocker-vainglory/issues/270</a>)</p>
-</div>
-<div class="section" id="vg-data-v2-9">
-<h2>[VG Data] v2.9<a class="headerlink" href="#vg-data-v2-9" title="Permalink to this headline">¶</a></h2>
-<p>– [#308](<a class="reference external" href="https://github.com/gamelocker/vainglory-assets/pull/308">https://github.com/gamelocker/vainglory-assets/pull/308</a>)</p>
-</div>
-<div class="section" id="vg-data-v2-8">
-<h2>[VG Data] v2.8<a class="headerlink" href="#vg-data-v2-8" title="Permalink to this headline">¶</a></h2>
-<p>– Skins:</p>
-<ul class="simple">
-<li>Glaive_Skin_Lion (Glaive)</li>
-<li>Ringo_Skin_Cowboy (Ringo)</li>
-<li>Idris_Skin_Egypt (Idris)</li>
-</ul>
-<p>– Items:</p>
-<ul class="simple">
-<li>Item_HealingFlask (Healing Flask)</li>
-<li>Item_Spellsword (Spellsword)</li>
-</ul>
+<p>– Data retention period is set to 120 days.</p>
 </div>
 <div class="section" id="api-v6-8-6">
 <h2>[API] v6.8.6<a class="headerlink" href="#api-v6-8-6" title="Permalink to this headline">¶</a></h2>
-<p>– PBE data is now available to approved community developers.</p>
-<p>– Future times are now supported</p>
-</div>
-<div class="section" id="vg-data-v2-7">
-<h2>[VG Data] v2.7<a class="headerlink" href="#vg-data-v2-7" title="Permalink to this headline">¶</a></h2>
-<p>– The next version of VG will include fixes for the following fields:</p>
-<ul class="simple">
-<li>xp</li>
-<li>levelMinXP</li>
-<li>levelMaxXP</li>
-<li>level</li>
-<li>karmaLevel</li>
-<li>wins</li>
-<li>completed</li>
-<li>completed_casual</li>
-<li>completed_ranked</li>
-<li>completed_blitz</li>
-<li>completed_aral</li>
-</ul>
-<p>– A bug was introduced whereby these fields showed the pre-match value, rather than the post match value.</p>
-<p>– The following new mappings are required to support the new hero, Reza!</p>
-<p>– Abilities:</p>
-<ul class="simple">
-<li>Spell A - HERO_ABILITY_REZA_A_NAME</li>
-<li>Spell B - HERO_ABILITY_REZA_B_NAME</li>
-<li>Spell C - HERO_ABILITY_REZA_C_NAME</li>
-</ul>
-<p>– Sources of Damage:</p>
-<ul class="simple">
-<li>Ability__Reza__DefaultAttack</li>
-<li>Ability__Reza__AltAttack</li>
-<li>Buff_Reza_Perk_VolatileSparkControl</li>
-<li>Buff_Reza_B_EmpoweredAttack</li>
-<li>Ability__Reza__C</li>
-<li>Ability__Reza__C_NetherformAttack</li>
-<li>Ability__Reza__CritAttack</li>
-</ul>
-<p>– Skins:</p>
-<ul class="simple">
-<li>Grace_Skin_Valkyrie</li>
-<li>Rona_Skin_Red</li>
-<li>Celeste_Skin_Butterfly</li>
-<li>Fortress_Skin_Warg</li>
-<li>Reza_DefaultSkin</li>
-</ul>
+<p>– PBE data is now available to approved community developers!</p>
+<p>– Future search times are defaulted to now()</p>
 </div>
 <div class="section" id="api-v4-2-3">
 <h2>[API] v4.2.3<a class="headerlink" href="#api-v4-2-3" title="Permalink to this headline">¶</a></h2>
-<p>– Hero name fixes:</p>
-<ul class="simple">
-<li>Sayoc  <em>Taka</em></li>
-<li>Hero009 <em>Krul</em></li>
-<li>Hero010 <em>Skaarf</em></li>
-<li>Hero016 <em>Rona</em></li>
-</ul>
-<p>– We are adding an additional field to particpants called “gold”. (Gold for the match).</p>
-<p>– In the player object we are fixing “shardId” to have the proper shard instead of being blank.</p>
+<p>– Player shardId is now up-to-date.</p>
 </div>
 <div class="section" id="api-v4-2-2">
 <h2>[API] v4.2.2<a class="headerlink" href="#api-v4-2-2" title="Permalink to this headline">¶</a></h2>
-<p>–TELEMETRY DATA IS LIVE!!</p>
+<p>– TELEMETRY DATA IS LIVE!!</p>
 <p>– New match data reaper: quicker match data availability!</p>
 <p>– Player filters: you can now filter by up to six players</p>
-<p>– Sample data performance fixes</p>
 <p>– Optimizations and bug fixes</p>
-<p>– Stay up to date with API Documentation [API Docs](<a class="reference external" href="https://developer.vainglorygame.com/docs">https://developer.vainglorygame.com/docs</a>?).</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -161,20 +88,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits/ratelimits.html">Rate Limits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../receivingresponses/receivingresponses.html">Receiving Responses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#api-v7-3-0">[API] v7.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vg-data-v2-9">[VG Data] v2.9</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vg-data-v2-8">[VG Data] v2.8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api-v6-8-6">[API] v6.8.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vg-data-v2-7">[VG Data] v2.7</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api-v4-2-3">[API] v4.2.3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api-v4-2-2">[API] v4.2.2</a></li>
 </ul>
