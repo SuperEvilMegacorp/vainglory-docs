@@ -5,9 +5,9 @@ Changelog
 
 [API] v7.3.0
 --------------------------------
--- Data retention is now 4 months
+-- Data retention is now 120 days.
 
--- API will no longer 504 if requests are sent for time periods where data doesn't exist [#248](https://github.com/madglory/gamelocker-vainglory/issues/248)
+-- API will no longer 504 if requests are sent for time periods where data doesn't exist. [#248](https://github.com/madglory/gamelocker-vainglory/issues/248)
 
 -- played_aral and played_blitz datapoints are now available [#270](https://github.com/madglory/gamelocker-vainglory/issues/270)
 
@@ -53,12 +53,12 @@ Changelog
 * completed_blitz
 * completed_aral
 
--- A bug was introduced whereby these fields showed the pre-match value, rather than the post match value.  
+-- A bug was introduced whereby these fields showed the pre-match value, rather than the post match value.
 
 -- The following new mappings are required to support the new hero, Reza!
 
 -- Abilities:
-	
+
 * Spell A - HERO_ABILITY_REZA_A_NAME
 * Spell B - HERO_ABILITY_REZA_B_NAME
 * Spell C - HERO_ABILITY_REZA_C_NAME
@@ -86,8 +86,8 @@ Changelog
 --------------------------------
 -- Hero name fixes:
 
-* Sayoc  *Taka*  
-* Hero009 *Krul*  
+* Sayoc  *Taka*
+* Hero009 *Krul*
 * Hero010 *Skaarf*
 * Hero016 *Rona*
 
