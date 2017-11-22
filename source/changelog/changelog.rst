@@ -5,22 +5,19 @@ Changelog
 
 [API] v7.3.0
 --------------------------------
--- Data retention is now 120 days.
-
--- API will no longer 504 if requests are sent for time periods where data doesn't exist. [#248](https://github.com/madglory/gamelocker-vainglory/issues/248)
+-- Data retention period is set to 120 days.
 
 
 [API] v6.8.6
 --------------------------------
--- PBE data is now available to approved community developers.
+-- PBE data is now available to approved community developers!
 
--- Future times are now supported
+-- Future search times are defaulted to now()
 
 
 [API] v4.2.3
 --------------------------------
-
--- In the player object we are fixing "shardId" to have the proper shard instead of being blank.
+-- Player shardId is now up-to-date.
 
 
 [API] v4.2.2
@@ -30,8 +27,6 @@ Changelog
 -- New match data reaper: quicker match data availability!
 
 -- Player filters: you can now filter by up to six players
-
--- Sample data performance fixes
 
 -- Optimizations and bug fixes
 
