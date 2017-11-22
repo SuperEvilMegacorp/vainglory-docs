@@ -9,6 +9,7 @@ Changelog
 
 -- API will no longer 504 if requests are sent for time periods where data doesn't exist. [#248](https://github.com/madglory/gamelocker-vainglory/issues/248)
 
+
 [API] v6.8.6
 --------------------------------
 -- PBE data is now available to approved community developers.
@@ -24,7 +25,7 @@ Changelog
 
 [API] v4.2.2
 --------------------------------
---TELEMETRY DATA IS LIVE!!
+-- TELEMETRY DATA IS LIVE!!
 
 -- New match data reaper: quicker match data availability!
 
@@ -33,8 +34,6 @@ Changelog
 -- Sample data performance fixes
 
 -- Optimizations and bug fixes
-
--- Stay up to date with API Documentation [API Docs](https://developer.vainglorygame.com/docs?).
 
 .. toctree::
   :maxdepth: 2
