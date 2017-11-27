@@ -10,8 +10,6 @@ Changelog
 
 [API] v6.8.6
 --------------------------------
--- PBE data is now available to approved community developers!
-
 -- Future search times are defaulted to now()
 
 
