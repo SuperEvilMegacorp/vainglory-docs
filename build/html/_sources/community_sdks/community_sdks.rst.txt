@@ -28,7 +28,7 @@ A JavaScript API client - `seripap/vainglory <https://github.com/seripap/vainglo
 R
 ---------------------------
 
-A project providing R6 classes (for the R language) for accessing the API - `madglory/vainglory-go-client <https://github.com/madglory/vainglory-go-client/>`_.
+A project providing R6 classes (for the R language) for accessing the API - `nathancarter/rvgapi <https://github.com/nathancarter/rvgapi>`_.
 
 
 Go
