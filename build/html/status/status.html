@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Changelog &#8212; Vainglory 1.0 documentation</title>
+    <title>Status &#8212; Vainglory 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/vainglory.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -24,7 +24,8 @@
     <link rel="shortcut icon" href="../_static/vainglory.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Errors" href="../errors/errors.html" />
+    <link rel="next" title="Community SDKs" href="../community_sdks/community_sdks.html" />
+    <link rel="prev" title="Telemetry" href="../telemetry/telemetry.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -50,28 +51,29 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="changelog">
-<span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="api-v7-3-0">
-<h2>[API] v7.3.0<a class="headerlink" href="#api-v7-3-0" title="Permalink to this headline">¶</a></h2>
-<p>– Data retention period is set to 120 days.</p>
+  <div class="section" id="status">
+<span id="id1"></span><h1>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h1>
+<p>The status endpoint can be called to verify that the API is up and running. It also provides the most recent release date and version of the Gamelocker service itself.</p>
+<p>The following command can be used to call the status endpoint:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/status&quot;</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api key&gt;&quot;</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="api-v6-8-6">
-<h2>[API] v6.8.6<a class="headerlink" href="#api-v6-8-6" title="Permalink to this headline">¶</a></h2>
-<p>– Future search times are defaulted to now()</p>
+<p>The above command will return the following JSON:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;data&quot;: {
+    &quot;type&quot;: &quot;status&quot;,
+    &quot;id&quot;: &quot;gamelocker&quot;,
+    &quot;attributes&quot;: {
+      &quot;releasedAt&quot;: &quot;2017-11-22T20:25:05Z&quot;,
+      &quot;version&quot;: &quot;v7.5.1&quot;
+    }
+  }
+}
+</pre></div>
 </div>
-<div class="section" id="api-v4-2-3">
-<h2>[API] v4.2.3<a class="headerlink" href="#api-v4-2-3" title="Permalink to this headline">¶</a></h2>
-<p>– Player shardId is now up-to-date.</p>
-</div>
-<div class="section" id="api-v4-2-2">
-<h2>[API] v4.2.2<a class="headerlink" href="#api-v4-2-2" title="Permalink to this headline">¶</a></h2>
-<p>– TELEMETRY DATA IS LIVE!!</p>
-<p>– New match data reaper: quicker match data availability!</p>
-<p>– Player filters: you can now filter by up to six players</p>
-<p>– Optimizations and bug fixes</p>
 <div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
@@ -94,16 +96,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../status/status.html">Status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#api-v7-3-0">[API] v7.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v6-8-6">[API] v6.8.6</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v4-2-3">[API] v4.2.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v4-2-2">[API] v4.2.2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Status</a><ul class="simple">
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelog</a></li>
 </ul>
 
         </div>
@@ -115,7 +113,11 @@
     <ul>
         <li>
           &larr;
-          <a href="../errors/errors.html" title="Previous document">Errors</a>
+          <a href="../telemetry/telemetry.html" title="Previous document">Telemetry</a>
+        </li>
+        <li>
+          <a href="../community_sdks/community_sdks.html" title="Next document">Community SDKs</a>
+          &rarr;
         </li>
     </ul>
   </nav>
