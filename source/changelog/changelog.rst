@@ -32,11 +32,6 @@ Deprecated:
 - player played_casual
 - player played_ranked
 
-Bug fixes:
-
-- Missing spectator
-- Old hero name strings in telemetry
-
 
 [API] v1.1.0
 ------------------------------
