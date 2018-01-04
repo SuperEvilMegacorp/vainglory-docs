@@ -3,6 +3,13 @@
 Changelog
 ==========
 
+[API] v1.2.1
+------------------------------
+Bug Fixes:
+
+- Fixed a bug causing 504 errors due to missing/broken matches
+- Outdated players from February removed from NA shard
+
 [API] v1.2.0
 ------------------------------
 New Features:
