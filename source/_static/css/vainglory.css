@@ -606,3 +606,238 @@ table.docutils td {
   padding:10px;
   border:1px solid #afb7b9;
 }
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  padding: 37px 77px 10px;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .15s;
+  -o-transition: .15s;
+  transition: .15s;
+}
+
+.modal .inner {
+  width: 95%;
+  max-height: 95vh;
+  max-width: 857px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 0 0 2000px rgba(53, 55, 57, 0.9);
+  box-shadow: 0 0 0 2000px rgba(53, 55, 57, 0.9);
+  border: 2px solid #b0b0b0;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: #191a1b;
+}
+
+.modal .inner {
+  padding: 41px 72px 10px;
+  border-color: #f79d02;
+}
+
+@media (max-width: 950px) {
+  .modal .inner {
+    padding: 41px 15px 10px;
+  }
+}
+
+.modal#inviteFriend .inner {
+  overflow: hidden;
+  max-width: 511px;
+  padding: 28px 37px 10px;
+}
+
+@media (max-width: 950px) {
+
+
+  .modal#inviteFriend .inner {
+    padding: 28px 5px 10px;
+  }
+}
+
+.modal#inviteFriend h2 {
+  margin-bottom: 1.3em;
+}
+
+
+.modal#createAcc .inner, .modal#logSign .inner {
+  overflow: visible;
+  padding: 0;
+  max-width: 516px;
+  min-height: 600px;
+}
+@media (max-width: 950px) {
+
+  .modal#createAcc .inner, .modal#logSign .inner {
+    min-height: 555px;
+  }
+}
+
+.modal#createAcc .inner .tab-content-container, .modal#logSign .inner .tab-content-container {
+  padding: 0 40px 15px;
+}
+
+
+.modal#createAcc .inner h2, .modal#logSign .inner h2 {
+  margin-bottom: .35em;
+}
+
+
+.modal#createAcc .inner p, .modal#logSign .inner p {
+  line-height: 1.3em;
+  margin-bottom: 1em;
+}
+
+
+.modal#createAcc .inner label, .modal#logSign .inner label {
+  color: white;
+  font-weight: 300;
+}
+
+
+.modal#createAcc .inner .btn, .modal#createAcc .inner *[type="submit"], .modal#logSign .inner .btn, .modal#logSign .inner *[type="submit"] {
+  margin-top: 8px;
+  min-width: 260px;
+}
+
+
+.modal#createAcc .inner .bottom-links, .modal#logSign .inner .bottom-links {
+  padding-top: 10px;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+
+#logSign .b-item {
+  padding-top: 0;
+}
+
+#logSign .form-list {
+  margin-bottom: 5px;
+}
+
+
+.modal#createAcc .inner .bottom-links .fake,
+.modal#createAcc .inner .bottom-links a,
+.modal#logSign .inner .bottom-links .fake,
+.modal#logSign .inner .bottom-links a {
+  text-decoration: none;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  color: #f79d02;
+  -webkit-transition: .15s;
+  -o-transition: .15s;
+  transition: .15s;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+
+.modal#createAcc .inner .bottom-links .fake:hover,
+.modal#createAcc .inner .bottom-links .fake:focus,
+.modal#createAcc .inner .bottom-links a:hover,
+.modal#createAcc .inner .bottom-links a:focus,
+.modal#logSign .inner .bottom-links .fake:hover,
+.modal#logSign .inner .bottom-links .fake:focus,
+.modal#logSign .inner .bottom-links a:hover,
+.modal#logSign .inner .bottom-links a:focus {
+  color: #bf4d0a;
+}
+
+
+.modal#createAcc .inner .bottom-links, .modal#logSign .inner .bottom-links {
+  text-align: center;
+}
+
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+  box-sizing: border-box;
+}
+
+
+.modal .close {
+  position: absolute;
+  top: 12px;
+  right: -48px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  border-radius: 62px;
+  border: 2px solid #f79d02;
+  -webkit-transition: .15s;
+  -o-transition: .15s;
+  transition: .15s;
+  z-index: 1;
+}
+
+@media (max-width: 950px) {
+
+  .modal .close {
+    top: -42px;
+    right: 7px;
+  }
+}
+
+.modal .close:hover {
+  border: 1px solid #afb7b9;
+}
+
+
+.modal .close:hover:before, .modal .close:hover:after {
+  background-color: #afb7b9;
+}
+
+
+.modal .close:before {
+  content: '';
+  height: 1px;
+  width: 15px;
+  background-color: #f79d02;
+  visibility: visible;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transition: .15s;
+  -o-transition: .15s;
+  transition: .15s;
+}
+
+
+.modal .close:after {
+  content: '';
+  height: 1px;
+  width: 15px;
+  background-color: #f79d02;
+  visibility: visible;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transition: .15s;
+  -o-transition: .15s;
+  transition: .15s;
+}
