@@ -39,37 +39,45 @@
 {% block footer %}
 
 <script>
-	$('#log-in-tab').attr('src', 'https://developer.vainglorygame.com/simple_login?_param=' + Date.now());
-	$('#sign-up-tab').attr('src', 'https://developer.vainglorygame.com/simple_create_account?_param=' + Date.now());
+	$(function () {
+		$('#log-in-tab').attr('src', 'https://developer.vainglorygame.com/simple_login?_param=' + Date.now());
+		$('#sign-up-tab').attr('src', 'https://developer.vainglorygame.com/simple_create_account?_param=' + Date.now());
 
-	$('#logSignBtn').click(function() {
-		$('html').addClass('modal-open');
-		$('#logSign').addClass('open');
-	});
+		$('#logSignBtn').click(function() {
+			$('html').addClass('modal-open');
+			$('#logSign').addClass('open');
+		});
 
-	$('.modal .close, .modal').click(function(){
-		$('.modal').removeClass('open');
-		$('html').removeClass('modal-open');
-	});
+		$('.modal .close, .modal').click(function(){
+			$('.modal').removeClass('open');
+			$('html').removeClass('modal-open');
+		});
 
-	$('.modal .inner').click(function(e) { e.stopPropagation(); });
+		$('.modal .inner').click(function(e) { e.stopPropagation(); });
 
-	$('ul.tabs li, .tab-accordion-heading').click(function() {
-		$('.tab-content, ul.tabs li, .tab-accordion-heading').removeClass('active');
-		var $this = $(this);
-		var activeTab = $this.attr("rel");
-		$("#"+activeTab).addClass('active');
-		$(this).addClass("active");
-		$(".tab-accordion-heading[rel^='"+activeTab+"'], ul.tabs li[rel^='"+activeTab+"']").addClass("active");
-		$('#' + $this.data('tab')).addClass('active')
-	});
+		$('ul.tabs li, .tab-accordion-heading').click(function() {
+			$('.tab-content, ul.tabs li, .tab-accordion-heading').removeClass('active');
+			var $this = $(this);
+			var activeTab = $this.attr("rel");
+			$("#"+activeTab).addClass('active');
+			$(this).addClass("active");
+			$(".tab-accordion-heading[rel^='"+activeTab+"'], ul.tabs li[rel^='"+activeTab+"']").addClass("active");
+			$('#' + $this.data('tab')).addClass('active')
+		});
 
-	window.addEventListener('message', function (e) {
-		if (e && e.data === 'GL-User-Authed') {
-			$('#logSign').remove();
-			$('#log-sign-link').attr('href', 'https://developer.vainglorygame.com');
+		window.addEventListener('message', function (e) {
+			if (e && e.data === 'GL-User-Authed') {
+				$('#logSign').remove();
+				$('#log-sign-link').attr('href', 'https://developer.vainglorygame.com');
+			}
+		}, false);
+
+		if (location.protocol !== 'https:') {
+			var $btn = $('#logSignBtn');
+			$btn.unbind('click');
+			$btn.parent('a').attr('href', 'https://developer.vainglorygame.com');
 		}
-	}, false);
+	});
 </script>
 {% endblock %}
 
