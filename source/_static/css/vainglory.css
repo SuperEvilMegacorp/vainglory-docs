@@ -29,6 +29,15 @@ input[type=search] {
   font-weight: bold;
   font-style: normal; }
 
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+
 body {
   color: #afb7b9;
   font-size: 14px;
@@ -638,12 +647,12 @@ table.docutils td {
   border: 2px solid #b0b0b0;
   overflow: hidden;
   overflow-y: scroll;
-  background-color: #191a1b;
+  background-color: black;
 }
 
 .modal .inner {
   padding: 41px 72px 10px;
-  border-color: #f79d02;
+  border-color: #b0b0b0;
 }
 
 @media (max-width: 950px) {
@@ -840,4 +849,597 @@ table.docutils td {
   -webkit-transition: .15s;
   -o-transition: .15s;
   transition: .15s;
+}
+
+
+/* line 2, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container {
+  position: relative;
+}
+
+@media (max-width: 950px) {
+  /* line 7, /app/app/assets/stylesheets/components/tabs.scss */
+  .tab-container.tab-container {
+    padding-bottom: 0;
+  }
+}
+/* line 12, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: #191a1b;
+  text-align: center;
+  position: relative;
+}
+
+/* line 24, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs:before, .tab-container.tab-container .tabs:after {
+  display: none;
+}
+
+/* line 28, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs li {
+  font-size: 18px;
+  font-family: "Ubuntu", sans-serif;
+  border: none;
+  border-bottom: 4px solid #191a1b;
+  padding: 11px 7px 4px;
+  margin: 0 30px;
+  list-style: none;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  text-transform: uppercase;
+}
+
+/* line 43, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs li:hover, .tab-container.tab-container .tabs li.active {
+  border-bottom: 4px solid #f79d02;
+}
+
+@media (max-width: 950px) {
+  /* line 48, /app/app/assets/stylesheets/components/tabs.scss */
+  .tab-container.tab-container .tabs li {
+    font-size: 12px;
+    padding: 6px 30px;
+  }
+}
+/* line 55, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs li.active, .tab-container.tab-container .tabs li:hover, .tab-container.tab-container .tabs li:focus {
+  cursor: pointer;
+  color: #f79d02;
+  -webkit-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+/* line 63, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs li.active {
+  cursor: default;
+}
+
+/* line 67, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tabs li:after {
+  display: none;
+}
+
+/* line 71, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .wrapper-outer {
+  background-color: #ebebeb;
+  padding: 0;
+}
+
+/* line 76, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container h3.tab-accordion-heading {
+  display: none;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 22px 52px 22px 18px;
+  font-weight: 600;
+  line-height: 1.2em;
+  color: #777777;
+  margin-bottom: 0;
+  border-bottom: 1px solid #56b2da;
+  background-image: url(/images/images/arrow-down-acc.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 27px;
+  background-position: right 17px top 27px;
+}
+
+@media (max-width: 768px) {
+  /* line 94, /app/app/assets/stylesheets/components/tabs.scss */
+  .tab-container.tab-container h3.tab-accordion-heading {
+    display: block;
+  }
+}
+/* line 99, /app/app/assets/stylesheets/components/tabs.scss */
+.lt-ie9 .tab-container.tab-container h3.tab-accordion-heading {
+  background-image: url(/images/images/arrow-down-acc.png);
+}
+
+/* line 103, /app/app/assets/stylesheets/components/tabs.scss */
+.no-svg .tab-container.tab-container h3.tab-accordion-heading {
+  background-image: url(/images/images/arrow-down-acc.png);
+}
+
+/* line 107, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container h3.tab-accordion-heading:hover, .tab-container.tab-container h3.tab-accordion-heading.active {
+  color: #56b2da;
+}
+
+/* line 111, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container h3.tab-accordion-heading:hover {
+  background-image: url(/images/images/arrow-down-acc-blue.svg);
+  background-repeat: no-repeat;
+}
+
+/* line 116, /app/app/assets/stylesheets/components/tabs.scss */
+.lt-ie9 .tab-container.tab-container h3.tab-accordion-heading:hover {
+  background-image: url(/images/images/arrow-down-acc-blue.png);
+}
+
+/* line 120, /app/app/assets/stylesheets/components/tabs.scss */
+.no-svg .tab-container.tab-container h3.tab-accordion-heading:hover {
+  background-image: url(/images/images/arrow-down-acc-blue.png);
+}
+
+/* line 124, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container h3.tab-accordion-heading.active {
+  background-image: url(/images/images/arrow-up-acc.svg);
+  background-repeat: no-repeat;
+}
+
+/* line 129, /app/app/assets/stylesheets/components/tabs.scss */
+.lt-ie9 .tab-container.tab-container h3.tab-accordion-heading.active {
+  background-image: url(/images/images/arrow-up-acc.png);
+}
+
+/* line 133, /app/app/assets/stylesheets/components/tabs.scss */
+.no-svg .tab-container.tab-container h3.tab-accordion-heading.active {
+  background-image: url(/images/images/arrow-up-acc.png);
+}
+
+/* line 137, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container h3.tab-accordion-heading.active + .tab-content {
+  display: block !important;
+}
+
+/* line 141, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content-con {
+  float: right;
+  width: 47.4%;
+  padding-right: 50px;
+}
+
+@media (max-width: 950px) {
+  /* line 148, /app/app/assets/stylesheets/components/tabs.scss */
+  .tab-container.tab-container .tab-content-con {
+    float: none;
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+/* line 156, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content {
+  max-height: 0;
+  overflow: hidden;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  /* line 163, /app/app/assets/stylesheets/components/tabs.scss */
+  .tab-container.tab-container .tab-content {
+    float: none;
+  }
+}
+/* line 168, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content.active {
+  max-height: 99999px;
+  border: none;
+}
+
+/* line 173, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner {
+  padding: 25px 42px 12px 37px;
+  padding: 54px 14px 12px;
+}
+
+/* line 178, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner h3 {
+  font-family: "Ubuntu", sans-serif;
+  color: #f79d02;
+  font-weight: 600;
+  letter-spacing: .07em;
+  margin-bottom: .7em;
+  clear: both;
+}
+
+/* line 187, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner p {
+  margin-bottom: 1.4em;
+}
+
+/* line 191, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner p + h3 {
+  margin-top: 1.5em;
+}
+
+/* line 195, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner ul {
+  padding-top: 3px;
+  margin-bottom: 41px;
+}
+
+/* line 200, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner ul + h3 {
+  margin-top: 1.5em;
+}
+
+/* line 204, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner li {
+  line-height: 1.9em;
+}
+
+/* line 208, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner li a {
+  text-decoration: underline;
+}
+
+/* line 212, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner li a:hover, .tab-container.tab-container .tab-content .inner li a:focus {
+  color: #bf4d0a;
+}
+
+/* line 216, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner ol {
+  margin-bottom: 37px;
+}
+
+/* line 220, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner ol + h3 {
+  margin-top: 1.5em;
+  margin-bottom: 1.4em;
+}
+
+/* line 225, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner ol li {
+  margin-bottom: .73em;
+}
+
+/* line 229, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner .btn-con {
+  padding-top: 40px;
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+/* line 235, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner .btn-con p {
+  text-align: left;
+  margin-bottom: 4.2em;
+}
+
+/* line 240, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner .btn-con .btn, .tab-container.tab-container .tab-content .inner .btn-con *[type="submit"] {
+  padding: 16px 17px;
+  letter-spacing: .11em;
+  max-width: 335px;
+  width: 90%;
+}
+
+/* line 247, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content .inner p {
+  font-size: 14px;
+  margin-bottom: 1.5em;
+}
+
+/* line 253, /app/app/assets/stylesheets/components/tabs.scss */
+.tab-container.tab-container .tab-content img {
+  float: left;
+  max-width: 191px;
+  margin: 0 1em 1em 0;
+}
+
+@media (max-width: 450px) {
+  /* line 260, /app/app/assets/stylesheets/components/tabs.scss */
+  .tab-container.tab-container .tab-content img {
+    float: none;
+    margin: 0 auto 1em;
+  }
+}
+
+/* line 4139, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container {
+  position: relative;
+}
+/* line 4142, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs {
+  padding: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: #191a1b;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* line 4156, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs:before, .tab-container.tab-container .tabs:after {
+  display: none;
+}
+/* line 4160, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li {
+  flex: 1;
+  font-family: "Antonio", sans-serif;
+  border: none;
+  margin: 0 30px;
+  list-style: none;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  text-align: center;
+  vertical-align: middle;
+  padding: 15px 0;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  font-weight: 600;
+  position: relative;
+  color: #8a8a8a;
+  margin: 0;
+  font-family: "Antonio", sans-serif;
+  border-left: 2px solid #b0b0b0;
+  border-right: 2px solid #b0b0b0;
+  border-bottom: 2px solid #b0b0b0;
+  background-color: #1d1d1d;
+}
+/* line 4186, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li:first-child {
+  border-left: 0;
+}
+/* line 4190, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li:last-child {
+  border-right: 0;
+}
+/* line 4194, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li.active, .tab-container.tab-container .tabs li:hover, .tab-container.tab-container .tabs li:focus {
+  cursor: pointer;
+  color: #fff;
+  border-bottom: 2px solid #b0b0b0;
+  -webkit-transition: color .25s ease-in-out;
+  -o-transition: color .25s ease-in-out;
+  transition: color .25s ease-in-out;
+}
+/* line 4203, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li.active {
+  cursor: default;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  color: #fff;
+  background-color: #000;
+}
+/* line 4211, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li.active:first-child {
+  border-left: 0;
+}
+/* line 4215, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li.active:last-child {
+  border-right: 0;
+}
+/* line 4220, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tabs li:after {
+  display: none;
+}
+/* line 4226, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .wrapper-outer {
+  background-color: #ebebeb;
+  padding: 0;
+}
+/* line 4231, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container h3.tab-accordion-heading {
+  display: none;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 22px 52px 22px 18px;
+  font-weight: 600;
+  line-height: 1.2em;
+  color: #777777;
+  margin-bottom: 0;
+  border-bottom: 1px solid #56b2da;
+  background-image: url(../images/arrow-down-acc.svg);
+  background-repeat: no-repeat;
+  background-position: 97% 27px;
+  background-position: right 17px top 27px;
+}
+
+@media (max-width: 950px) {
+  /* line 4250, /app/app/assets/stylesheets/vainglorygame/style.scss */
+  .tab-container.tab-container {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 950px) {
+  /* line 4256, /app/app/assets/stylesheets/vainglorygame/style.scss */
+  .tab-container.tab-container .tabs li {
+    font-size: 12px;
+    padding: 6px 30px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 4264, /app/app/assets/stylesheets/vainglorygame/style.scss */
+  .tab-container.tab-container h3.tab-accordion-heading {
+    display: block;
+  }
+}
+/* line 4269, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.lt-ie9 .tab-container.tab-container h3.tab-accordion-heading, .no-svg .tab-container.tab-container h3.tab-accordion-heading {
+  background-image: url(../images/arrow-down-acc.png);
+}
+
+/* line 4274, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container h3.tab-accordion-heading:hover, .tab-container.tab-container h3.tab-accordion-heading.active {
+  color: #56b2da;
+}
+/* line 4278, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container h3.tab-accordion-heading:hover {
+  background-image: url(../images/arrow-down-acc-blue.svg);
+  background-repeat: no-repeat;
+}
+
+/* line 4284, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.lt-ie9 .tab-container.tab-container h3.tab-accordion-heading:hover, .no-svg .tab-container.tab-container h3.tab-accordion-heading:hover {
+  background-image: url(../images/arrow-down-acc-blue.png);
+}
+
+/* line 4288, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container h3.tab-accordion-heading.active {
+  background-image: url(../images/arrow-up-acc.svg);
+  background-repeat: no-repeat;
+}
+
+/* line 4293, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.lt-ie9 .tab-container.tab-container h3.tab-accordion-heading.active, .no-svg .tab-container.tab-container h3.tab-accordion-heading.active {
+  background-image: url(../images/arrow-up-acc.png);
+}
+
+/* line 4298, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container h3.tab-accordion-heading.active + .tab-content {
+  display: block !important;
+}
+/* line 4302, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content-con {
+  float: right;
+  width: 47.4%;
+  padding-right: 50px;
+}
+/* line 4308, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content {
+  max-height: 0;
+  overflow: hidden;
+  border: none;
+  border: 0 solid white;
+}
+/* line 4314, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content.active {
+  max-height: 99999px;
+  border: none;
+}
+/* line 4319, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner {
+  padding: 25px 42px 12px 37px;
+  padding: 54px 14px 12px;
+}
+/* line 4323, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner h3 {
+  font-family: "Antonio", sans-serif;
+  color: #f79d02;
+  font-weight: 600;
+  letter-spacing: .07em;
+  margin-bottom: .7em;
+  clear: both;
+}
+/* line 4332, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner p {
+  margin-bottom: 1.4em;
+}
+/* line 4335, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner p + h3 {
+  margin-top: 1.5em;
+}
+/* line 4340, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner ul {
+  padding-top: 3px;
+  margin-bottom: 41px;
+}
+/* line 4344, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner ul + h3 {
+  margin-top: 1.5em;
+}
+/* line 4349, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner li {
+  line-height: 1.9em;
+}
+/* line 4352, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner li a {
+  text-decoration: underline;
+}
+/* line 4355, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner li a:hover, .tab-container.tab-container .tab-content .inner li a:focus {
+  color: #bf4d0a;
+}
+/* line 4361, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner ol {
+  margin-bottom: 37px;
+}
+/* line 4364, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner ol + h3 {
+  margin-top: 1.5em;
+  margin-bottom: 1.4em;
+}
+/* line 4369, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner ol li {
+  margin-bottom: .73em;
+}
+/* line 4374, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner .btn-con {
+  padding-top: 40px;
+  text-align: center;
+  margin-bottom: 55px;
+}
+/* line 4379, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner .btn-con p {
+  text-align: left;
+  margin-bottom: 4.2em;
+}
+/* line 4384, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner .btn-con .btn, .tab-container.tab-container .tab-content .inner .btn-con *[type="submit"] {
+  padding: 16px 17px;
+  letter-spacing: .11em;
+  max-width: 335px;
+  width: 90%;
+}
+/* line 4392, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content .inner p {
+  font-size: 14px;
+  margin-bottom: 1.5em;
+}
+/* line 4399, /app/app/assets/stylesheets/vainglorygame/style.scss */
+.tab-container.tab-container .tab-content img {
+  float: left;
+  max-width: 191px;
+  margin: 0 1em 1em 0;
+}
+
+@media (max-width: 950px) {
+  /* line 4408, /app/app/assets/stylesheets/vainglorygame/style.scss */
+  .tab-container.tab-container .tab-content-con {
+    float: none;
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 4417, /app/app/assets/stylesheets/vainglorygame/style.scss */
+  .tab-container.tab-container .tab-content {
+    float: none;
+  }
+}
+@media (max-width: 450px) {
+  /* line 4423, /app/app/assets/stylesheets/vainglorygame/style.scss */
+  .tab-container.tab-container .tab-content img {
+    float: none;
+    margin: 0 auto 1em;
+  }
 }

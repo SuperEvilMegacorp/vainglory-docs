@@ -5,7 +5,7 @@
 <div id="logSign" class="modal form-con">
 	<div class="inner">
 		<span class="close"></span>
-		<div class="tab-container">
+		<div class="tab-container" style="border: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
 			<ul class="tabs">
 				<li class="tab-link active" data-tab="log-in-tab">Log In</li>
 				<li class="tab-link" data-tab="sign-up-tab">Sign Up</li>
@@ -26,9 +26,9 @@
 			<a href="#" id="log-sign-link"><span id="logSignBtn" class="btn">My Apps</span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
-					<li><a class="active" href="http://vainglory-gamelocker-documentation.readthedocs.io/en/latest/introduction.html">Documentation</a></li>
+					<li><a class="active" href="https://vainglory-gamelocker-documentation.readthedocs.io/en/latest/introduction.html">Documentation</a></li>
 					<li><a href="https://developer.vainglorygame.com/faq">Faq</a></li>
-					<li><a href="http://vainglory-gamelocker-documentation.readthedocs.io/en/latest/changelog/changelog.html">Changelog</a></li>
+					<li><a href="https://vainglory-gamelocker-documentation.readthedocs.io/en/latest/changelog/changelog.html">Changelog</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -39,8 +39,8 @@
 {% block footer %}
 
 <script>
-	$('#log-in-tab').attr('src', 'http://vainglorygame.lvh.me:3000/simple_login?_param=' + Date.now());
-	$('#sign-up-tab').attr('src', 'http://vainglorygame.lvh.me:3000/simple_create_account?_param=' + Date.now());
+	$('#log-in-tab').attr('src', 'https://developer.vainglorygame.com/simple_login?_param=' + Date.now());
+	$('#sign-up-tab').attr('src', 'https://developer.vainglorygame.com/simple_create_account?_param=' + Date.now());
 
 	$('#logSignBtn').click(function() {
 		$('html').addClass('modal-open');
