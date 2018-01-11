@@ -1,6 +1,6 @@
 # vainglory-docs
 
-[http://vainglory-gamelocker-documentation.readthedocs.io/en/master/introduction.html](http://vainglory-gamelocker-documentation.readthedocs.io/en/master/introduction.html)
+[https://vainglory-gamelocker-documentation.readthedocs.io/en/master/introduction.html](https://vainglory-gamelocker-documentation.readthedocs.io/en/master/introduction.html)
 
 ### Setup & Run
 Install python and pip
