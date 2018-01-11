@@ -3,6 +3,12 @@
 Changelog
 ==========
 
+[API] v1.2.2
+------------------------------
+Other:
+
+- Search stability improvements
+
 [API] v1.2.1
 ------------------------------
 Bug Fixes:
