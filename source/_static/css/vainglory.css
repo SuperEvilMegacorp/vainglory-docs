@@ -862,7 +862,7 @@ table.docutils td {
       display: none; }
     .tab-container .tabs li {
       flex: 1;
-      font-size: 1.8rem;
+      font-size: 18px;
       border: none;
       margin: 0 30px;
       list-style: none;
