@@ -3,6 +3,12 @@
 Changelog
 ==========
 
+[API] v1.4.0
+------------------------------
+New Data:
+
+- player casual_5v5 wins
+
 [API] v1.3.0
 ------------------------------
 New Data:
